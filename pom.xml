@@ -3,15 +3,16 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>br.com.instaweb</groupId>
-	<artifactId>jetty-embedded</artifactId>
+	<artifactId>jetty-embedded-tutorial</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 
 	<name>jetty-embedded</name>
-	<url>http://maven.apache.org</url>
+	<url>https://github.com/bandola/jetty-embedded-tutorial</url>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<jetty.version>8.1.12.v20130726</jetty.version>
 	</properties>
 
 	<build>
@@ -84,13 +85,13 @@
 		<dependency>
 			<groupId>org.eclipse.jetty</groupId>
 			<artifactId>jetty-server</artifactId>
-			<version>8.1.12.v20130726</version>
+			<version>${jetty.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.eclipse.jetty</groupId>
 			<artifactId>jetty-webapp</artifactId>
-			<version>8.1.12.v20130726</version>
+			<version>${jetty.version}</version>
 			<exclusions>
 				<exclusion>
 					<groupId>javax.servlet</groupId>
@@ -102,19 +103,19 @@
 		<dependency>
 			<groupId>org.eclipse.jetty</groupId>
 			<artifactId>jetty-servlet</artifactId>
-			<version>8.1.12.v20130726</version>
+			<version>${jetty.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.eclipse.jetty</groupId>
 			<artifactId>jetty-util</artifactId>
-			<version>8.1.12.v20130726</version>
+			<version>${jetty.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.eclipse.jetty</groupId>
 			<artifactId>jetty-io</artifactId>
-			<version>8.1.12.v20130726</version>
+			<version>${jetty.version}</version>
 		</dependency>
 	
 		<!-- JSP Support -->
