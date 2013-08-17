@@ -27,6 +27,7 @@
 							<tasks>
 								<move todir="${project.build.directory}/${project.build.finalName}/">
 									<fileset dir="${project.build.directory}/classes/">
+										<!-- Move all classes inside this package to the root directory  -->
 										<include name="br/com/instaweb/jetty/*.class" />
 									</fileset>
 								</move>
@@ -51,10 +52,11 @@
 							<goal>unpack-dependencies</goal>
 						</goals>
 						<configuration>
+							<!-- Unpack jetty dependencies to the root directory.  -->
 							<includeGroupIds>org.eclipse.jetty,org.mortbay.jetty</includeGroupIds>
 							<excludeArtifactIds>jsp-api,jstl</excludeArtifactIds>
+							<!-- We don't need these files. -->
 							<excludes>META-INF/ECLIPSEF.*,about_files/**,about.html,jetty-dir.css</excludes>
-
 							<outputDirectory>
 								${project.build.directory}/${project.build.finalName}
 							</outputDirectory>
@@ -69,13 +71,12 @@
 				<version>2.2</version>
 				<configuration>
 					<archive>
-						<!-- Seta a classe executada ao executar o comando java -jar spv.war -->
+						<!-- This is the class which will run with "java -jar app_name.war  -->
 						<manifest>
 							<mainClass>br.com.instaweb.jetty.WebServer</mainClass>
 						</manifest>
 					</archive>
-					<!-- O jetty já consta no diretório raiz do .war. Não é necessário deixá-lo 
-						na pasta lib. -->
+					<!-- We don't need to duplicate these. -->
 					<packagingExcludes>WEB-INF/lib/jetty-*.jar</packagingExcludes>
 				</configuration>
 			</plugin>
