@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>br.com.instaweb</groupId>
-	<artifactId>jetty-embedded-tutorial</artifactId>
+	<artifactId>jetty-embedded</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 
@@ -51,7 +51,7 @@
 							<goal>unpack-dependencies</goal>
 						</goals>
 						<configuration>
-							<includeGroupIds>org.eclipse.jetty,javax.servlet</includeGroupIds>
+							<includeGroupIds>org.eclipse.jetty,org.mortbay.jetty</includeGroupIds>
 							<excludeArtifactIds>jsp-api,jstl</excludeArtifactIds>
 							<excludes>META-INF/ECLIPSEF.*,about_files/**,about.html,jetty-dir.css</excludes>
 
@@ -117,10 +117,10 @@
 			<artifactId>jetty-io</artifactId>
 			<version>${jetty.version}</version>
 		</dependency>
-	
+	 
 		<!-- JSP Support -->
 		<dependency>
-			<groupId> org.mortbay.jetty</groupId>
+			<groupId>org.mortbay.jetty</groupId>
 			<artifactId>jsp-2.1-glassfish</artifactId>
 			<version>2.1.v20100127</version>
 		</dependency>

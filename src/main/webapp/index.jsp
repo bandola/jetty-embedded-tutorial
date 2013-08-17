@@ -1,6 +1,6 @@
 <html>
 <body>
-  Jetty is Running!
-  Message: ${param.msg}!
+  <h1>Jetty is Running!</h1>
+  <p>Message: ${param.msg}</p>
 </body>
 </html>

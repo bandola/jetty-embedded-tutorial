@@ -29,7 +29,9 @@ public class ServerFactory {
 	private Handler createExternalHandler() {
 		URL location = getSourceCodeURL();
 		WebAppContext webapp = new WebAppContext(location.toExternalForm(), config.getContextPath());
-		webapp.setWar(location.toExternalForm());
+		if(!isAssembledWarFile(location) && config.getBaseResource() != null){
+			webapp.setResourceBase(config.getBaseResource());
+		}
 		return webapp;
 	}
 
@@ -37,5 +39,9 @@ public class ServerFactory {
 		ProtectionDomain protectionDomain = ServerFactory.class.getProtectionDomain();
 		URL location = protectionDomain.getCodeSource().getLocation();
 		return location;
+	}
+	
+	private boolean isAssembledWarFile(URL location){
+		return location.toExternalForm().toLowerCase().endsWith(".war");
 	}
 }
